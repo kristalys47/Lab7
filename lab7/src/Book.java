@@ -1,5 +1,5 @@
 
-public class Book implements GameThing, Readable
+public class Book implements GameThing, Readable, Openable
 {
 
 	public String getName()
@@ -16,7 +16,18 @@ public class Book implements GameThing, Readable
 	
 	public void read() 
 	{
-		System.out.println("This book has germs DON'T TOUCH IT!");
+		System.out.println("This book has germs. DON'T TOUCH IT!");
+		
+	}
+
+	
+	public void close() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void open() {
+		// TODO Auto-generated method stub
 		
 	}
 

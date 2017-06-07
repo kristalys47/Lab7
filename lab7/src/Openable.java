@@ -1,4 +1,6 @@
 
-public interface Openable {
-
+public interface Openable 
+{
+	void close();
+	void open();
 }
