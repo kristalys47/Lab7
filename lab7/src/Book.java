@@ -1,6 +1,9 @@
 
 public class Book implements GameThing, Readable, Openable
 {
+	public boolean isOpen = false;    
+	public boolean isClose = true; 
+	//Start out closed
 
 	public String getName()
 
@@ -22,14 +25,29 @@ public class Book implements GameThing, Readable, Openable
 
 	
 	public void close() {
-		// TODO Auto-generated method stub
+		if (isOpen)
+		{
+			System.out.println("As the book closes you hear; \"NOOOOOOOOOOOOOOOOOOO!\".");
+			isOpen=!isOpen;
+		}
 		
+		else
+		{
+			System.out.println("DUDE CAN'T YOU SEE THE BOOK IS CLOSED! -.-");
+		}				
 	}
 
 	public void open() {
-		// TODO Auto-generated method stub
+		if (isOpen)
+			System.out.println("The books speaks and tells you: I am open pal.");
+		else
+		{
+			System.out.println("The book opens and suddently BOOM! some fairy dust comes out.");
+			isOpen=!isOpen;
+		}
 		
 	}
+	
 
 
 }
