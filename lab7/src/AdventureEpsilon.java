@@ -5,6 +5,7 @@ public class AdventureEpsilon {
 	public static Box theBox = new Box();
 	public static Sign theSign = new Sign();
     public static Book theBook = new Book();
+    public static Apple theApple= new Apple();
 
 	public static void main(String[] args)
 	{
@@ -12,6 +13,7 @@ public class AdventureEpsilon {
 		theRoom.addThing(theBox);
 		theRoom.addThing(theSign);
 		theRoom.addThing(theBook);
+		theRoom.addThing(theApple);
 
 		//Create additional useful objects
 		Scanner keyboard = new Scanner(System.in); 
@@ -37,6 +39,9 @@ public class AdventureEpsilon {
 			System.out.println("5. Read something");
 			System.out.println("6. Open something");
 			System.out.println("7. Close something");
+
+			System.out.println("8. Eat something");
+
 			System.out.println("99. Quit this game");
 			System.out.print("Your choice? >>>");
 			int mainMenuChoice = keyboard.nextInt();
@@ -160,6 +165,30 @@ public class AdventureEpsilon {
 		                  System.out.println();
 		            }
 		            break;
+
+				case 8:
+					System.out.println("Which thing do you want to eat?");
+		            theRoom.listContents();
+		            System.out.print("Your choice? (Enter an unlisted number to go back to the main menu) >>>");
+		            thingChoice = keyboard.nextInt();
+		            System.out.println();
+		            if (thingChoice >= 1 && thingChoice <= theRoom.getThingCount())
+		            {
+		                  GameThing thing = theRoom.getThingByIndex(thingChoice);
+		                  if (thing instanceof Edible)
+		                  {
+		                	  	Edible readableThing = (Edible)thing;
+		                        readableThing.eat();
+		                  
+		                  }
+		                  else
+		                  {
+		                        System.out.println("That's not something you can eat! You can probably die.");
+		             }
+		                  System.out.println();
+		            }
+		            break;
+
 				case 99:
 					hasQuitGame = true;
 					System.out.println("Thank you for playing!");
