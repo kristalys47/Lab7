@@ -2,23 +2,23 @@ public class Sign implements GameThing, Readable, Edible
 
 {
 
-      public String getName()
+	public String getName()
 
-      {
-            return "A chocolate wooden sign";
-      }
+	{
+		return "A chocolate wooden sign";
+	}
 
-      public String getDescription()
+	public String getDescription()
 
-      {
-                return "This is a small chocolate wooden sign. There seems to be some partially faded \nwriting in it, but forget it; IT IS CHOCOLATE! Try eating it.";
-      }
+	{
+		return "This is a small chocolate wooden sign. There seems to be some partially faded \nwriting in it, but forget it; IT IS CHOCOLATE! Try eating it.";
+	}
 
-      public void read()
+	public void read()
 
-      {
-            System.out.println("You can read the following message: \"Eat me :)!\"");
-      }
+	{
+		System.out.println("You can read the following message: \"Eat me :)!\"");
+	}
 
 	@Override
 	public void eat() {
