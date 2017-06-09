@@ -176,7 +176,7 @@ public class AdventureEpsilon {
 		                  {
 		                	  	Edible readableThing = (Edible)thing;
 		                        readableThing.eat();
-		                        
+		                  
 		                  }
 		                  else
 		                  {
