@@ -39,7 +39,9 @@ public class AdventureEpsilon {
 			System.out.println("5. Read something");
 			System.out.println("6. Open something");
 			System.out.println("7. Close something");
+
 			System.out.println("8. Eat something");
+
 			System.out.println("99. Quit this game");
 			System.out.print("Your choice? >>>");
 			int mainMenuChoice = keyboard.nextInt();
@@ -163,6 +165,7 @@ public class AdventureEpsilon {
 		                  System.out.println();
 		            }
 		            break;
+
 				case 8:
 					System.out.println("Which thing do you want to eat?");
 		            theRoom.listContents();
@@ -185,6 +188,7 @@ public class AdventureEpsilon {
 		                  System.out.println();
 		            }
 		            break;
+
 				case 99:
 					hasQuitGame = true;
 					System.out.println("Thank you for playing!");
