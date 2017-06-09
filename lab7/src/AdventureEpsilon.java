@@ -35,6 +35,8 @@ public class AdventureEpsilon {
 			System.out.println("3. Put something into the box");
 			System.out.println("4. Pull out something out of the box");
 			System.out.println("5. Read something");
+			System.out.println("6. Open something");
+			System.out.println("7. Close something");
 			System.out.println("99. Quit this game");
 			System.out.print("Your choice? >>>");
 			int mainMenuChoice = keyboard.nextInt();
@@ -93,10 +95,7 @@ public class AdventureEpsilon {
 						}
 					}
 					break;
-				case 99:
-					hasQuitGame = true;
-					System.out.println("Thank you for playing!");
-					break;
+				
 				case 5:
 			            System.out.println("Which thing do you want to read?");
 			            theRoom.listContents();
@@ -118,7 +117,53 @@ public class AdventureEpsilon {
 			                  System.out.println();
 			            }
 			            break;
-			 
+			            
+				case 6:
+		            System.out.println("Which thing do you want to open?");
+		            theRoom.listContents();
+		            System.out.print("Your choice? (Enter an unlisted number to go back to the main menu) >>>");
+		            thingChoice = keyboard.nextInt();
+		            System.out.println();
+		            if (thingChoice >= 1 && thingChoice <= theRoom.getThingCount())
+		            {
+		                  GameThing thing = theRoom.getThingByIndex(thingChoice);
+		                  if (thing instanceof Openable)
+		                  {
+		                	  	Openable readableThing = (Openable)thing;
+		                        readableThing.open();
+		                  }
+		                  else
+		                  {
+		                        System.out.println("That's not something you can open!");
+		             }
+		                  System.out.println();
+		            }
+		            break;
+				case 7:
+					System.out.println("Which thing do you want to close?");
+		            theRoom.listContents();
+		            System.out.print("Your choice? (Enter an unlisted number to go back to the main menu) >>>");
+		            thingChoice = keyboard.nextInt();
+		            System.out.println();
+		            if (thingChoice >= 1 && thingChoice <= theRoom.getThingCount())
+		            {
+		                  GameThing thing = theRoom.getThingByIndex(thingChoice);
+		                  if (thing instanceof Openable)
+		                  {
+		                	  	Openable readableThing = (Openable)thing;
+		                        readableThing.close();
+		                  }
+		                  else
+		                  {
+		                        System.out.println("That's not something you can close!");
+		             }
+		                  System.out.println();
+		            }
+		            break;
+				case 99:
+					hasQuitGame = true;
+					System.out.println("Thank you for playing!");
+					break;
 				default:
 					System.out.println("Please use one of the choices from the menu!");
 					System.out.println();
